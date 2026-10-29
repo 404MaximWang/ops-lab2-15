@@ -1,0 +1,68 @@
+{
+  "profile_display_start": "2026-10-29T12:32:41+08:00",
+  "window_seconds": 20,
+  "query_time_epoch": 1793248381,
+  "alignment_note": "Prometheus窗口按pprof显示的秒级起始时间对齐，采样为1秒间隔，属于近似同窗统计；CPU剖析样本时间与process计数器时间不是同一测量机制。",
+  "results": {
+    "cpu_rate": {
+      "query": "rate(process_cpu_seconds_total{job=\"enrolld\"}[20s])",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {
+                "instance": "127.0.0.1:8080",
+                "job": "enrolld"
+              },
+              "value": [
+                1793248381,
+                "0.1463061052631577"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "request_rate": {
+      "query": "sum(rate(http_requests_total{job=\"enrolld\",route=\"/api/courses/{id}\"}[20s]))",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {},
+              "value": [
+                1793248381,
+                "304.4210526315789"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "samples": {
+      "query": "count_over_time(process_cpu_seconds_total{job=\"enrolld\"}[20s])",
+      "response": {
+        "status": "success",
+        "data": {
+          "resultType": "vector",
+          "result": [
+            {
+              "metric": {
+                "instance": "127.0.0.1:8080",
+                "job": "enrolld"
+              },
+              "value": [
+                1793248381,
+                "20"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  }
+}
